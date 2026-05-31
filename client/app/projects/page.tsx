@@ -20,8 +20,8 @@ const projects = [
       "React Infinite Scroll",
       "Vercel",
     ],
-    github: "#",
-    live: "#",
+    github: "https://github.com/BimaPanjiWijaya/Grockcicle",
+    live: "https://grockcicle.vercel.app/",
   },
   {
     num: "02",

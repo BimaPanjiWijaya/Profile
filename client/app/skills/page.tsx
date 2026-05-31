@@ -51,21 +51,38 @@ const tools = [
 const certifications = [
   {
     issuer: "HackerRank",
+    name: "Software Engineer Intern",
+    date: "20 May 2026",
+    code: "64ED3AE1F780",
+    type: "Role Certification",
+  },
+  {
+    issuer: "HackerRank",
     name: "Problem Solving (Basic)",
-    date: "May 2026",
-    code: "0535ec823789",
+    date: "21 May 2026",
+    code: "0535EC823789",
+    type: "Skill Certification",
   },
   {
     issuer: "HackerRank",
     name: "JavaScript (Basic)",
-    date: "May 2026",
-    code: "da98576f8106",
+    date: "20 May 2026",
+    code: "DA98576F8106",
+    type: "Skill Certification",
   },
   {
     issuer: "HackerRank",
     name: "React (Basic)",
-    date: "May 2026",
-    code: "11c2e25d0a6a",
+    date: "21 May 2026",
+    code: "11C2E25D0A6A",
+    type: "Skill Certification",
+  },
+  {
+    issuer: "HackerRank",
+    name: "CSS (Basic)",
+    date: "21 May 2026",
+    code: "5A3854552C93",
+    type: "Skill Certification",
   },
 ];
 
@@ -202,7 +219,7 @@ export default function SkillsPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
               gap: "16px",
             }}
           >
@@ -217,24 +234,36 @@ export default function SkillsPage() {
                   padding: "24px",
                 }}
               >
-                <p
+                <div
                   style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: "10px",
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "var(--gold)",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
                     marginBottom: "10px",
                   }}
                 >
-                  {c.issuer}
-                </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: "10px",
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "var(--gold)",
+                    }}
+                  >
+                    {c.issuer}
+                  </p>
+                  <span className="badge badge-gray" style={{ fontSize: "10px" }}>
+                    {c.type === "Role Certification" ? "Role" : "Skill"}
+                  </span>
+                </div>
                 <p
                   style={{
                     fontSize: "15px",
                     fontWeight: 600,
                     color: "var(--text)",
-                    marginBottom: "8px",
+                    marginBottom: "12px",
+                    lineHeight: 1.3,
                   }}
                 >
                   {c.name}
@@ -244,22 +273,23 @@ export default function SkillsPage() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
+                    marginBottom: "8px",
                   }}
                 >
                   <span style={{ fontSize: "12px", color: "var(--muted)" }}>
-                    Issued {c.date}
+                    {c.date}
                   </span>
                   <span className="badge badge-gold">Verified</span>
                 </div>
                 <p
                   style={{
                     fontFamily: "var(--mono)",
-                    fontSize: "11px",
+                    fontSize: "10px",
                     color: "var(--muted)",
-                    marginTop: "8px",
+                    letterSpacing: "0.04em",
                   }}
                 >
-                  #{c.code}
+                  ID: {c.code}
                 </p>
               </div>
             ))}

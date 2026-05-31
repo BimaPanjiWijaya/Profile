@@ -251,6 +251,43 @@ img, svg {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
 
+/* ─── NAVBAR ─── */
+.nav-link {
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--muted2);
+  transition: color var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+.nav-link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+.nav-link.active {
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.09);
+  font-weight: 500;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  color: var(--muted2);
+  transition: color var(--transition), background var(--transition);
+}
+.mobile-nav-link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+.mobile-nav-link.active {
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.09);
+  font-weight: 500;
+}
+
 /* ─── HOVER UTILITIES (replaces inline onMouseEnter/Leave handlers) ─── */
 .h-border { transition: border-color var(--transition); }
 .h-border:hover { border-color: var(--border2); }
@@ -273,11 +310,18 @@ img, svg {
   display: none !important;
 }
 
+.desktop-nav {
+  display: flex;
+}
+
 @media (max-width: 900px) {
   .container {
     padding: 0 20px;
   }
   .mobile-burger {
     display: flex !important;
+  }
+  .desktop-nav {
+    display: none !important;
   }
 }

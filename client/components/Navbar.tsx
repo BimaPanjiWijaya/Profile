@@ -36,19 +36,22 @@ export default function Navbar() {
           right: 0,
           zIndex: 1000,
           height: "var(--nav-h)",
-          background: scrolled ? "rgba(250,251,253,0.92)" : "transparent",
-          backdropFilter: scrolled ? "blur(16px)" : "none",
+          background: scrolled
+            ? "rgba(11, 12, 15, 0.88)"
+            : "rgba(11, 12, 15, 0.4)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
           borderBottom: scrolled
-            ? "1px solid var(--gray-100)"
+            ? "1px solid var(--border)"
             : "1px solid transparent",
-          transition: "all 0.3s ease",
+          transition: "background 0.3s ease, border-color 0.3s ease",
         }}
       >
         <div
           style={{
             maxWidth: "var(--max-w)",
             margin: "0 auto",
-            padding: "0 60px",
+            padding: "0 48px",
             height: "100%",
             display: "flex",
             alignItems: "center",
@@ -58,70 +61,61 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            style={{ display: "flex", flexDirection: "column", gap: "1px" }}
+            style={{ display: "flex", flexDirection: "column", gap: "2px" }}
           >
             <span
               style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "18px",
-                fontWeight: 700,
-                color: "var(--ink)",
+                fontFamily: "var(--serif)",
+                fontSize: "17px",
+                fontWeight: 600,
+                color: "var(--text)",
                 lineHeight: 1,
+                letterSpacing: "-0.01em",
               }}
             >
               Bima Panji
             </span>
             <span
               style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "10px",
-                color: "var(--blue)",
-                letterSpacing: "0.12em",
-                fontWeight: 400,
+                fontFamily: "var(--mono)",
+                fontSize: "9px",
+                color: "var(--gold)",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
               }}
             >
-              FULL STACK DEV
+              Full Stack Dev
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "2px",
+            }}
+            className="desktop-nav"
+          >
             {navLinks.map((link) => {
               const active = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  style={{
-                    padding: "8px 16px",
-                    borderRadius: "var(--radius-md)",
-                    fontSize: "14px",
-                    fontWeight: active ? 600 : 400,
-                    color: active ? "var(--blue)" : "var(--gray-600)",
-                    background: active ? "var(--blue-pale)" : "transparent",
-                    transition: "all var(--transition)",
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!active)
-                      (e.currentTarget as HTMLElement).style.background =
-                        "var(--gray-50)";
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!active)
-                      (e.currentTarget as HTMLElement).style.background =
-                        "transparent";
-                  }}
+                  className={`nav-link${active ? " active" : ""}`}
                 >
                   {link.label}
                 </Link>
               );
             })}
+
             <Link
               href="/contact"
-              className="btn btn-dark"
+              className="btn btn-gold"
               style={{
-                marginLeft: "12px",
-                padding: "9px 22px",
+                marginLeft: "16px",
+                padding: "8px 20px",
                 fontSize: "13px",
               }}
             >
@@ -129,60 +123,54 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile burger */}
+          {/* Hamburger button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
+            className="mobile-burger"
             style={{
-              display: "none",
               background: "none",
               border: "none",
               cursor: "pointer",
               padding: "8px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "5px",
+              width: "36px",
             }}
-            className="mobile-burger"
+            aria-label="Toggle menu"
           >
-            <div
+            <span
               style={{
-                width: "22px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "5px",
+                display: "block",
+                height: "2px",
+                background: "var(--text)",
+                borderRadius: "2px",
+                transition: "transform 0.25s ease, opacity 0.25s ease",
+                transform: mobileOpen ? "rotate(45deg) translateY(7px)" : "none",
               }}
-            >
-              <span
-                style={{
-                  display: "block",
-                  height: "2px",
-                  background: "var(--ink)",
-                  borderRadius: "2px",
-                  transition: "all 0.2s",
-                  transform: mobileOpen
-                    ? "rotate(45deg) translateY(7px)"
-                    : "none",
-                }}
-              />
-              <span
-                style={{
-                  display: "block",
-                  height: "2px",
-                  background: "var(--ink)",
-                  borderRadius: "2px",
-                  opacity: mobileOpen ? 0 : 1,
-                }}
-              />
-              <span
-                style={{
-                  display: "block",
-                  height: "2px",
-                  background: "var(--ink)",
-                  borderRadius: "2px",
-                  transition: "all 0.2s",
-                  transform: mobileOpen
-                    ? "rotate(-45deg) translateY(-7px)"
-                    : "none",
-                }}
-              />
-            </div>
+            />
+            <span
+              style={{
+                display: "block",
+                height: "2px",
+                background: "var(--text)",
+                borderRadius: "2px",
+                transition: "opacity 0.25s ease",
+                opacity: mobileOpen ? 0 : 1,
+              }}
+            />
+            <span
+              style={{
+                display: "block",
+                height: "2px",
+                background: "var(--text)",
+                borderRadius: "2px",
+                transition: "transform 0.25s ease, opacity 0.25s ease",
+                transform: mobileOpen
+                  ? "rotate(-45deg) translateY(-7px)"
+                  : "none",
+              }}
+            />
           </button>
         </div>
       </nav>
@@ -196,32 +184,36 @@ export default function Navbar() {
             left: 0,
             right: 0,
             zIndex: 999,
-            background: "#fff",
-            borderBottom: "1px solid var(--gray-100)",
-            padding: "16px 24px 24px",
-            boxShadow: "var(--shadow-lg)",
+            background: "var(--bg2)",
+            borderBottom: "1px solid var(--border)",
+            padding: "12px 20px 20px",
+            boxShadow: "0 16px 40px rgba(0,0,0,0.5)",
             display: "flex",
             flexDirection: "column",
             gap: "4px",
           }}
         >
-          {navLinks.map((link) => (
+          {navLinks.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`mobile-nav-link${active ? " active" : ""}`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <div style={{ paddingTop: "8px", borderTop: "1px solid var(--border)", marginTop: "4px" }}>
             <Link
-              key={link.href}
-              href={link.href}
-              style={{
-                padding: "12px 16px",
-                borderRadius: "var(--radius-md)",
-                fontSize: "15px",
-                fontWeight: pathname === link.href ? 600 : 400,
-                color: pathname === link.href ? "var(--blue)" : "var(--ink)",
-                background:
-                  pathname === link.href ? "var(--blue-pale)" : "transparent",
-              }}
+              href="/contact"
+              className="btn btn-gold"
+              style={{ width: "100%", justifyContent: "center" }}
             >
-              {link.label}
+              Hire Me →
             </Link>
-          ))}
+          </div>
         </div>
       )}
     </>

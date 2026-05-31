@@ -74,7 +74,9 @@ export default function Footer() {
             >
               Pages
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            >
               {pageLinks.map((l) => (
                 <Link
                   key={l.href}
@@ -85,10 +87,12 @@ export default function Footer() {
                     transition: "color var(--transition)",
                   }}
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color = "var(--text)")
+                    ((e.currentTarget as HTMLElement).style.color =
+                      "var(--text)")
                   }
                   onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color = "var(--muted2)")
+                    ((e.currentTarget as HTMLElement).style.color =
+                      "var(--muted2)")
                   }
                 >
                   {l.label}
@@ -111,7 +115,9 @@ export default function Footer() {
             >
               Connect
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            >
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -124,10 +130,12 @@ export default function Footer() {
                     transition: "color var(--transition)",
                   }}
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color = "var(--gold)")
+                    ((e.currentTarget as HTMLElement).style.color =
+                      "var(--gold)")
                   }
                   onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.color = "var(--muted2)")
+                    ((e.currentTarget as HTMLElement).style.color =
+                      "var(--muted2)")
                   }
                 >
                   {s.label}
@@ -155,9 +163,7 @@ export default function Footer() {
               fontSize: "11px",
               color: "var(--muted)",
             }}
-          >
-            Built with Next.js & TypeScript
-          </p>
+          ></p>
         </div>
       </div>
     </footer>
