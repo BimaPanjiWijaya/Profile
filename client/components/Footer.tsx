@@ -55,7 +55,7 @@ export default function Footer() {
                 lineHeight: 1.75,
               }}
             >
-              Full Stack Developer based in Bandung, Indonesia. Building digital
+              Full Stack Developer based in Jakarta, Indonesia. Building digital
               products with care and precision.
             </p>
           </div>

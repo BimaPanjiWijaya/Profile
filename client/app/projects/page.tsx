@@ -42,8 +42,8 @@ const projects = [
       "AWS",
       "Firebase",
     ],
-    github: "#",
-    live: "#",
+    github: "https://github.com/BimaPanjiWijaya/Pacebok-Mobile-App",
+    live: "https://expo.dev/preview/update/expo-go?message=feat%3A+refactor+imports+in+TabNavigator+for+cleaner+code+structure&updateRuntimeVersion=1.0.0&createdAt=2026-05-10T10%3A28%3A26.730Z&slug=exp&projectId=e7929333-d3a6-499d-aa40-01ff1b99b694&group=33a5de84-ede5-475c-8798-bccd4d08aa55",
   },
   {
     num: "03",
@@ -64,8 +64,8 @@ const projects = [
       "Supabase",
       "3rd Party API",
     ],
-    github: "#",
-    live: "#",
+    github: "https://github.com/BimaPanjiWijaya/Sakti-Finance",
+    live: "https://saktifinance-b163c.web.app/",
   },
 ];
 
@@ -81,7 +81,9 @@ export default function ProjectsPage() {
 
       <section style={{ padding: "72px 0" }}>
         <div className="container">
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+          >
             {projects.map((p) => (
               <div
                 key={p.num}

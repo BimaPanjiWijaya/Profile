@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="7" fill="#0b0c0f"/>
+  <!-- Gold top accent -->
+  <rect x="5" y="4" width="22" height="2.5" rx="1.25" fill="#c9a84c"/>
+  <!-- Left code bracket -->
+  <path d="M10 10 L5.5 16 L10 22" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right code bracket -->
+  <path d="M22 10 L26.5 16 L22 22" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- B initial -->
+  <text x="16" y="21.5" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#f0f1f4" text-anchor="middle">B</text>
+</svg>
