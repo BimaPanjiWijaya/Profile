@@ -1,75 +1,57 @@
-"use client";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
 const exps = [
   {
-    role: "Senior Full Stack Developer",
-    co: "PT. Tech Innovate",
-    period: "Jan 2023 — Present",
-    type: "Full-time",
-    loc: "Bandung",
+    role: "Programmer",
+    co: "South Bengkulu Regional Revenue Agency",
+    period: "Sep 2025 — Jan 2026",
+    type: "Contract",
+    loc: "Bengkulu, Indonesia",
     color: "var(--blue)",
     badge: "badge-blue",
-    desc: "Lead the engineering team building a SaaS platform serving 50,000+ active users. Responsible for architecture decisions, code reviews, and mentoring junior developers.",
+    desc: "Maintained IT infrastructure and developed a web application to improve public service quality at the regional revenue agency.",
     wins: [
-      "Redesigned API architecture, cutting response time 40%",
-      "Docker-based CI/CD: 30min → 5min deploys",
-      "Mentored 3 juniors; 2 since promoted",
-      "Monolith → microservices with zero downtime",
+      "Performed maintenance on all hardware and software systems",
+      "Maintained and monitored the office Wi-Fi network",
+      "Designed and built a customer satisfaction survey website",
     ],
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Redis", "Docker", "AWS"],
+    tech: ["HTML/CSS", "JavaScript", "PHP", "MySQL"],
   },
   {
-    role: "Full Stack Developer",
-    co: "StartupXYZ",
-    period: "Mar 2022 — Dec 2022",
+    role: "Programmer",
+    co: "DPMPTSP South Bengkulu",
+    period: "Aug 2023 — Aug 2025",
     type: "Full-time",
-    loc: "Remote — Jakarta",
+    loc: "Bengkulu, Indonesia",
     color: "var(--green)",
     badge: "badge-green",
-    desc: "Developed and maintained multiple client-facing web applications. Worked closely with product and design teams in a fast-paced environment.",
+    desc: "Developed and maintained government digital service applications for the One-Stop Integrated Service agency (DPMPTSP) of South Bengkulu.",
     wins: [
-      "Built 3 client apps from scratch with Next.js + Node.js",
-      "Integrated Midtrans, Xendit, and Stripe",
-      "Reduced page load time by 60%",
-      "99.5% API uptime across production services",
+      "Designed and developed the DPMPTSP Portal application",
+      "Built a Public Service Mall and Marketplace website",
+      "Maintained the network, hardware, and software infrastructure",
     ],
-    tech: ["React", "Express", "MongoDB", "Redis", "GCP", "Nginx"],
+    tech: ["JavaScript", "Node.js", "Express", "PostgreSQL", "React"],
   },
+];
+
+const education = [
   {
-    role: "Frontend Developer",
-    co: "Digital Agency Co.",
-    period: "Aug 2021 — Feb 2022",
-    type: "Contract",
-    loc: "Bandung",
+    degree: "Full Stack JavaScript Immersive Program",
+    school: "Hacktiv8",
+    period: "Feb 2026 – May 2026",
+    loc: "Jakarta, Indonesia",
+    note: "Intensive bootcamp covering modern full-stack JavaScript development. Completed 3 capstone projects using React, Node.js, PostgreSQL, MongoDB, and GraphQL.",
     color: "var(--gold)",
-    badge: "badge-gold",
-    desc: "Built responsive web interfaces for 15+ client projects. Worked directly with designers using Figma for spec handoffs, pixel-perfect delivery.",
-    wins: [
-      "Delivered 15+ projects on time and budget",
-      "Created reusable React component library",
-      "Perfect Lighthouse scores on 8 sites",
-      "Introduced Storybook for doc",
-    ],
-    tech: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Figma"],
   },
   {
-    role: "Junior Web Developer",
-    co: "Freelance",
-    period: "Jan 2020 — Jul 2021",
-    type: "Freelance",
-    loc: "Bandung",
+    degree: "Bachelor of Accounting",
+    school: "Universitas Ahmad Dahlan",
+    period: "2017 – 2022",
+    loc: "Jakarta, Indonesia",
+    note: "GPA 3.39 / 4.00",
     color: "var(--muted2)",
-    badge: "badge-gray",
-    desc: "Started professional journey building websites and web apps for small businesses. Managed full project lifecycle independently from scoping to deployment.",
-    wins: [
-      "12 client projects, 5★ avg rating",
-      "Custom CMS solutions with PHP + MySQL",
-      "Solo: requirements → design → deploy",
-      "Self-taught modern frontend frameworks",
-    ],
-    tech: ["HTML/CSS", "JavaScript", "PHP", "MySQL", "WordPress"],
   },
 ];
 
@@ -80,74 +62,72 @@ export default function ExperiencePage() {
         label="Career"
         title="Work history &"
         italic="education."
-        desc="3+ years of professional experience — from freelance gigs to leading engineering teams at scale."
+        desc="2+ years of professional experience in government technology and full-stack web development."
       />
 
+      {/* ── WORK EXPERIENCE ── */}
       <section
-        style={{ padding: "88px 0", borderBottom: "1px solid var(--border)" }}
+        style={{ padding: "72px 0", borderBottom: "1px solid var(--border)" }}
       >
         <div className="container">
           <p className="label" style={{ marginBottom: "16px" }}>
             Work Experience
           </p>
-          <h2 className="section-title" style={{ marginBottom: "48px" }}>
+          <h2 className="section-title" style={{ marginBottom: "40px" }}>
             Professional <em>History</em>
           </h2>
+
           <div
             style={{ display: "flex", flexDirection: "column", gap: "16px" }}
           >
             {exps.map((e, i) => (
               <div
                 key={i}
+                className="h-border"
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--border)",
-                  borderRadius: "16px",
-                  padding: "36px 40px",
+                  borderRadius: "var(--radius-lg)",
+                  padding: "32px 36px",
                   position: "relative",
                   overflow: "hidden",
-                  transition: "border-color 0.25s",
                 }}
-                onMouseEnter={(el) =>
-                  ((el.currentTarget as HTMLElement).style.borderColor =
-                    "var(--border2)")
-                }
-                onMouseLeave={(el) =>
-                  ((el.currentTarget as HTMLElement).style.borderColor =
-                    "var(--border)")
-                }
               >
+                {/* Color bar */}
                 <div
                   style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     bottom: 0,
-                    width: "2px",
+                    width: "3px",
                     background: e.color,
                   }}
                 />
+
                 <div
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr auto",
-                    gap: "32px",
+                    gap: "24px",
+                    alignItems: "start",
                   }}
                 >
                   <div>
+                    {/* Role & badge */}
                     <div
                       style={{
                         display: "flex",
                         alignItems: "center",
                         gap: "10px",
                         flexWrap: "wrap",
-                        marginBottom: "6px",
+                        marginBottom: "4px",
                       }}
                     >
                       <h3
                         style={{
                           fontFamily: "var(--serif)",
-                          fontSize: "22px",
+                          fontSize: "20px",
                           fontWeight: 400,
                           color: "var(--text)",
                         }}
@@ -156,84 +136,68 @@ export default function ExperiencePage() {
                       </h3>
                       <span className={`badge ${e.badge}`}>{e.type}</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: "12px",
-                        alignItems: "center",
-                        marginBottom: "18px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "14px",
-                          fontWeight: 600,
-                          color: e.color,
-                        }}
-                      >
+
+                    {/* Company & location */}
+                    <p style={{ fontSize: "14px", marginBottom: "16px" }}>
+                      <span style={{ fontWeight: 600, color: e.color }}>
                         {e.co}
                       </span>
-                      <span style={{ fontSize: "12px", color: "var(--muted)" }}>
-                        📍 {e.loc}
+                      <span
+                        style={{ color: "var(--muted)", marginLeft: "10px" }}
+                      >
+                        {e.loc}
                       </span>
-                    </div>
+                    </p>
+
+                    {/* Description */}
                     <p
                       style={{
                         fontSize: "14px",
                         color: "var(--muted2)",
                         lineHeight: 1.8,
                         maxWidth: "640px",
-                        marginBottom: "20px",
+                        marginBottom: "16px",
                       }}
                     >
                       {e.desc}
                     </p>
-                    <div style={{ marginBottom: "20px" }}>
-                      <p
-                        style={{
-                          fontFamily: "var(--mono)",
-                          fontSize: "10px",
-                          letterSpacing: "0.15em",
-                          textTransform: "uppercase",
-                          color: "var(--muted)",
-                          marginBottom: "10px",
-                        }}
-                      >
-                        Key Achievements
-                      </p>
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "6px",
-                        }}
-                      >
-                        {e.wins.map((w) => (
-                          <div
-                            key={w}
+
+                    {/* Key wins */}
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "6px",
+                        marginBottom: "18px",
+                      }}
+                    >
+                      {e.wins.map((w) => (
+                        <div
+                          key={w}
+                          style={{
+                            display: "flex",
+                            gap: "10px",
+                            fontSize: "14px",
+                            color: "var(--muted2)",
+                            alignItems: "flex-start",
+                          }}
+                        >
+                          <span
                             style={{
-                              display: "flex",
-                              gap: "10px",
-                              fontSize: "14px",
-                              color: "var(--muted2)",
-                              alignItems: "flex-start",
+                              color: e.color,
+                              fontWeight: 700,
+                              flexShrink: 0,
+                              lineHeight: 1.6,
                             }}
                           >
-                            <span
-                              style={{
-                                color: e.color,
-                                fontWeight: 700,
-                                flexShrink: 0,
-                                lineHeight: 1.6,
-                              }}
-                            >
-                              →
-                            </span>
-                            {w}
-                          </div>
-                        ))}
-                      </div>
+                            →
+                          </span>
+                          {w}
+                        </div>
+                      ))}
                     </div>
+
+                    {/* Tech tags */}
                     <div
                       style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}
                     >
@@ -244,6 +208,8 @@ export default function ExperiencePage() {
                       ))}
                     </div>
                   </div>
+
+                  {/* Period */}
                   <span
                     style={{
                       fontFamily: "var(--mono)",
@@ -251,6 +217,7 @@ export default function ExperiencePage() {
                       color: "var(--muted)",
                       whiteSpace: "nowrap",
                       letterSpacing: "0.04em",
+                      paddingTop: "4px",
                     }}
                   >
                     {e.period}
@@ -262,135 +229,127 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* Education */}
+      {/* ── EDUCATION ── */}
       <section
-        style={{ padding: "88px 0", borderBottom: "1px solid var(--border)" }}
+        style={{ padding: "72px 0", borderBottom: "1px solid var(--border)" }}
       >
         <div className="container">
           <p className="label" style={{ marginBottom: "16px" }}>
             Education
           </p>
-          <h2 className="section-title" style={{ marginBottom: "40px" }}>
+          <h2 className="section-title" style={{ marginBottom: "32px" }}>
             Academic <em>Background</em>
           </h2>
+
           <div
-            style={{
-              background: "var(--surface)",
-              border: "1px solid var(--border)",
-              borderRadius: "16px",
-              padding: "36px 40px",
-              position: "relative",
-              overflow: "hidden",
-            }}
+            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
           >
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "2px",
-                background: "linear-gradient(90deg, var(--gold), transparent)",
-              }}
-            />
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr auto",
-                gap: "32px",
-              }}
-            >
-              <div>
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: "22px",
-                    fontWeight: 400,
-                    color: "var(--text)",
-                    marginBottom: "4px",
-                  }}
-                >
-                  S1 Teknik Informatika
-                </h3>
-                <p
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: 600,
-                    color: "var(--gold)",
-                    marginBottom: "8px",
-                  }}
-                >
-                  Universitas Padjadjaran
-                </p>
-                <p
-                  style={{
-                    fontSize: "14px",
-                    color: "var(--muted2)",
-                    lineHeight: 1.7,
-                    marginBottom: "14px",
-                  }}
-                >
-                  Thesis on distributed systems optimization. Active in software
-                  engineering student club.
-                </p>
-                <span className="badge badge-gold">GPA: 3.72 / 4.00</span>
-              </div>
-              <span
+            {education.map((ed) => (
+              <div
+                key={ed.school}
                 style={{
-                  fontFamily: "var(--mono)",
-                  fontSize: "11px",
-                  color: "var(--muted)",
-                  whiteSpace: "nowrap",
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius-lg)",
+                  padding: "28px 36px",
+                  display: "grid",
+                  gridTemplateColumns: "1fr auto",
+                  gap: "24px",
+                  alignItems: "start",
+                  position: "relative",
+                  overflow: "hidden",
                 }}
               >
-                2018 – 2022
-              </span>
-            </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    bottom: 0,
+                    width: "3px",
+                    background: ed.color,
+                  }}
+                />
+                <div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: "19px",
+                      fontWeight: 400,
+                      color: "var(--text)",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    {ed.degree}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 600,
+                      color: ed.color,
+                      marginBottom: "4px",
+                    }}
+                  >
+                    {ed.school}
+                  </p>
+                  <p style={{ fontSize: "13px", color: "var(--muted)" }}>
+                    {ed.loc}
+                  </p>
+                  {ed.note && (
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        color: "var(--muted2)",
+                        lineHeight: 1.7,
+                        marginTop: "10px",
+                      }}
+                    >
+                      {ed.note}
+                    </p>
+                  )}
+                </div>
+                <span
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: "11px",
+                    color: "var(--muted)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {ed.period}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: "80px 0" }}>
+      {/* ── CTA ── */}
+      <section style={{ padding: "72px 0" }}>
         <div className="container">
           <div
             style={{
-              background: "var(--surface)",
-              border: "1px solid var(--border)",
-              borderRadius: "20px",
-              padding: "48px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              position: "relative",
-              overflow: "hidden",
+              flexWrap: "wrap",
+              gap: "24px",
             }}
           >
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "2px",
-                background: "linear-gradient(90deg, var(--gold), transparent)",
-              }}
-            />
             <div>
               <h3
                 style={{
                   fontFamily: "var(--serif)",
-                  fontSize: "28px",
-                  fontWeight: 400,
+                  fontSize: "26px",
+                  fontWeight: 300,
                   color: "var(--text)",
-                  marginBottom: "8px",
+                  marginBottom: "6px",
                 }}
               >
                 Want the full picture?
               </h3>
-              <p style={{ fontSize: "15px", color: "var(--muted2)" }}>
-                Download my CV for a complete overview of experience, skills,
-                and education.
+              <p style={{ fontSize: "14px", color: "var(--muted2)" }}>
+                Download my CV for a complete overview of experience and skills.
               </p>
             </div>
             <div style={{ display: "flex", gap: "12px", flexShrink: 0 }}>

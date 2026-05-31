@@ -9,13 +9,15 @@ export const metadata: Metadata = {
     template: "%s | Bima Panji Wijaya",
   },
   description:
-    "Full Stack Developer based in Bandung, Indonesia. Specializing in React, Next.js, Node.js, and scalable web applications.",
+    "Full Stack Developer based in Jakarta, Indonesia. Specializing in React, Next.js, Node.js, PostgreSQL, and modern web applications.",
   keywords: [
     "Full Stack Developer",
+    "Software Developer",
     "React",
     "Next.js",
     "Node.js",
-    "Bandung",
+    "TypeScript",
+    "Jakarta",
     "Indonesia",
   ],
 };
@@ -27,6 +29,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <Navbar />
         <div className="page-offset">

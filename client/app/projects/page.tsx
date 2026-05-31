@@ -1,104 +1,68 @@
-"use client";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
 const projects = [
   {
     num: "01",
-    year: "2024",
+    year: "May 2026",
     status: "Live",
-    title: "E-Commerce Platform",
-    summary: "Full-stack retail platform built to scale.",
-    desc: "End-to-end e-commerce for a regional retail brand with real-time inventory sync, Midtrans payment, promo engine, and admin analytics. Deployed on AWS + Docker, handles 1,000+ concurrent users.",
+    title: "Grockcicle",
+    desc: "An e-commerce website that sells drinkware and accessories. Built with a modern full-stack JavaScript setup, featuring product browsing, infinite scroll, authentication, and a seamless checkout experience.",
     tech: [
       "Next.js",
       "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "Docker",
-      "AWS",
+      "Tailwind CSS",
+      "MongoDB",
+      "JWT",
+      "Bcryptjs",
+      "Zod",
+      "React Toastify",
+      "React Infinite Scroll",
+      "Vercel",
     ],
-    highlights: [
-      "1,000+ concurrent users",
-      "Midtrans payment integration",
-      "Real-time inventory sync",
-      "Admin analytics dashboard",
-    ],
-    github: "https://github.com/BimaPanjiWijaya",
+    github: "#",
     live: "#",
   },
   {
     num: "02",
-    year: "2024",
+    year: "May 2026",
     status: "Live",
-    title: "Project Management App",
-    summary: "Real-time collaborative task system.",
-    desc: "Jira-inspired tool with real-time WebSocket kanban, sprint planning, RBAC, time tracking, and Slack/email webhooks.",
-    tech: ["React", "Express", "MongoDB", "Socket.io", "JWT", "Redis"],
-    highlights: [
-      "Real-time WebSocket sync",
-      "RBAC — 5 permission levels",
-      "Slack & email webhooks",
-      "Sprint velocity tracking",
+    title: "Pacebok",
+    desc: "A social media mobile application built with React Native. Users can post content, follow others, and interact in real time. Backed by a GraphQL API with Apollo Server and MongoDB, with file storage via AWS and Firebase.",
+    tech: [
+      "React Native",
+      "Expo",
+      "Apollo Client",
+      "React Navigation",
+      "Node.js",
+      "Apollo Server",
+      "MongoDB",
+      "Redis",
+      "JWT",
+      "AWS",
+      "Firebase",
     ],
     github: "#",
     live: "#",
   },
   {
     num: "03",
-    year: "2023",
+    year: "April 2026",
     status: "Live",
-    title: "Analytics Dashboard",
-    summary: "Multi-tenant BI platform.",
-    desc: "Connects to PostgreSQL, MySQL, Google Sheets. Drag-and-drop chart builder, scheduled PDF/Excel exports, embeddable widgets.",
+    title: "Sakti Finance",
+    desc: "A financial management website powered by artificial intelligence. Helps users track expenses, set budgets, and get AI-driven financial insights. Integrates third-party APIs with a PostgreSQL backend and React frontend.",
     tech: [
-      "Next.js",
-      "Prisma",
+      "React",
+      "Vite",
+      "Redux",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
       "PostgreSQL",
-      "Chart.js",
-      "AWS S3",
-      "Puppeteer",
-    ],
-    highlights: [
-      "Multi-source connectors",
-      "Drag & drop chart builder",
-      "Scheduled PDF/Excel export",
-      "Embeddable widget system",
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    num: "04",
-    year: "2023",
-    status: "Live",
-    title: "REST API Gateway",
-    summary: "Microservices API with developer tools.",
-    desc: "Centralized API with key management, tiered rate limiting, webhook delivery, usage analytics, and auto-generated Swagger docs.",
-    tech: ["Node.js", "Express", "PostgreSQL", "Redis", "Docker", "Swagger"],
-    highlights: [
-      "Tiered rate limiting",
-      "API key management",
-      "Webhook delivery system",
-      "Auto-generated Swagger docs",
-    ],
-    github: "#",
-    live: "#",
-  },
-  {
-    num: "05",
-    year: "2022",
-    status: "Archived",
-    title: "Local Business Directory",
-    summary: "Discovery platform for Bandung.",
-    desc: "Community-driven directory of restaurants, shops, and services. Search + filters, Google Maps, claim & review system, 500+ listings.",
-    tech: ["React", "Firebase", "Google Maps API", "TailwindCSS"],
-    highlights: [
-      "Google Maps integration",
-      "Business verification",
-      "Review & rating system",
-      "500+ listings",
+      "Sequelize",
+      "JWT",
+      "Supabase",
+      "3rd Party API",
     ],
     github: "#",
     live: "#",
@@ -111,70 +75,56 @@ export default function ProjectsPage() {
       <PageHero
         label="Portfolio"
         title="Projects I've"
-        italic="shipped."
-        desc="Real-world applications designed, built, and deployed — from side projects to systems at scale."
+        italic="built."
+        desc="Applications I designed and developed — from e-commerce to mobile apps to AI-powered tools."
       />
 
-      <section style={{ padding: "88px 0" }}>
+      <section style={{ padding: "72px 0" }}>
         <div className="container">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-          >
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {projects.map((p) => (
               <div
                 key={p.num}
+                className="h-lift"
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--border)",
-                  borderRadius: "16px",
-                  padding: "36px 40px",
+                  borderRadius: "var(--radius-lg)",
+                  padding: "32px 36px",
                   position: "relative",
                   overflow: "hidden",
-                  transition:
-                    "border-color 0.25s, transform 0.25s, box-shadow 0.25s",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "var(--border2)";
-                  el.style.transform = "translateY(-2px)";
-                  el.style.boxShadow = "0 20px 60px rgba(0,0,0,0.5)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "var(--border)";
-                  el.style.transform = "translateY(0)";
-                  el.style.boxShadow = "none";
                 }}
               >
-                {/* Gold side accent on hover — static left bar */}
+                {/* Status bar */}
                 <div
                   style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     bottom: 0,
-                    width: "2px",
+                    width: "3px",
                     background:
-                      p.status === "Live" ? "var(--green)" : "var(--muted)",
+                      p.status === "Live" ? "var(--green)" : "var(--surface2)",
                   }}
                 />
 
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 160px",
-                    gap: "32px",
+                    gridTemplateColumns: "1fr auto",
+                    gap: "24px",
                     alignItems: "start",
                   }}
                 >
                   <div>
+                    {/* Header row */}
                     <div
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        gap: "14px",
-                        marginBottom: "14px",
+                        gap: "12px",
                         flexWrap: "wrap",
+                        marginBottom: "12px",
                       }}
                     >
                       <span
@@ -189,27 +139,23 @@ export default function ProjectsPage() {
                       <h2
                         style={{
                           fontFamily: "var(--serif)",
-                          fontSize: "24px",
+                          fontSize: "22px",
                           fontWeight: 400,
                           color: "var(--text)",
                         }}
                       >
                         {p.title}
                       </h2>
-                      <span
-                        className={`badge ${p.status === "Live" ? "badge-green" : "badge-gray"}`}
-                      >
-                        {p.status === "Live" && (
-                          <span
-                            style={{
-                              width: "5px",
-                              height: "5px",
-                              borderRadius: "50%",
-                              background: "var(--green)",
-                              display: "inline-block",
-                            }}
-                          />
-                        )}
+                      <span className="badge badge-green">
+                        <span
+                          style={{
+                            width: "5px",
+                            height: "5px",
+                            borderRadius: "50%",
+                            background: "var(--green)",
+                            display: "inline-block",
+                          }}
+                        />
                         {p.status}
                       </span>
                       <span
@@ -224,52 +170,20 @@ export default function ProjectsPage() {
                       </span>
                     </div>
 
+                    {/* Description */}
                     <p
                       style={{
-                        fontSize: "15px",
+                        fontSize: "14px",
                         color: "var(--muted2)",
-                        lineHeight: 1.78,
+                        lineHeight: 1.8,
                         maxWidth: "680px",
-                        marginBottom: "20px",
+                        marginBottom: "18px",
                       }}
                     >
                       {p.desc}
                     </p>
 
-                    <div
-                      style={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        gap: "12px",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      {p.highlights.map((h) => (
-                        <span
-                          key={h}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "6px",
-                            fontSize: "13px",
-                            color: "var(--muted2)",
-                          }}
-                        >
-                          <span
-                            style={{
-                              width: "4px",
-                              height: "4px",
-                              borderRadius: "50%",
-                              background: "var(--gold)",
-                              display: "inline-block",
-                              flexShrink: 0,
-                            }}
-                          />
-                          {h}
-                        </span>
-                      ))}
-                    </div>
-
+                    {/* Tech tags */}
                     <div
                       style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}
                     >
@@ -281,25 +195,35 @@ export default function ProjectsPage() {
                     </div>
                   </div>
 
+                  {/* Links */}
                   <div
                     style={{
                       display: "flex",
                       flexDirection: "column",
                       gap: "8px",
-                      paddingTop: "4px",
+                      paddingTop: "2px",
+                      flexShrink: 0,
                     }}
                   >
                     <Link
                       href={p.live}
                       className="btn btn-gold"
-                      style={{ justifyContent: "center", fontSize: "13px" }}
+                      style={{
+                        justifyContent: "center",
+                        fontSize: "13px",
+                        padding: "9px 18px",
+                      }}
                     >
                       Live ↗
                     </Link>
                     <Link
                       href={p.github}
                       className="btn btn-ghost"
-                      style={{ justifyContent: "center", fontSize: "13px" }}
+                      style={{
+                        justifyContent: "center",
+                        fontSize: "13px",
+                        padding: "9px 18px",
+                      }}
                     >
                       GitHub
                     </Link>

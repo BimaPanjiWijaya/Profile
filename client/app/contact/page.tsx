@@ -3,27 +3,28 @@ import { useState } from "react";
 
 const info = [
   {
-    icon: "✉️",
     label: "Email",
-    value: "bima@email.com",
-    href: "mailto:bima@email.com",
+    value: "bimapanjiwijaya@gmail.com",
+    href: "mailto:bimapanjiwijaya@gmail.com",
   },
   {
-    icon: "💼",
+    label: "Phone",
+    value: "085157798617",
+    href: "tel:085157798617",
+  },
+  {
     label: "LinkedIn",
     value: "linkedin.com/in/bimapanji",
     href: "#",
   },
   {
-    icon: "🐙",
     label: "GitHub",
     value: "github.com/BimaPanjiWijaya",
     href: "https://github.com/BimaPanjiWijaya",
   },
   {
-    icon: "📍",
     label: "Location",
-    value: "Bandung, West Java, Indonesia",
+    value: "Jakarta, Indonesia",
     href: null,
   },
 ];
@@ -38,7 +39,7 @@ export default function ContactPage() {
   const [focused, setFocused] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
-  const submit = (e: React.FormEvent) => {
+  const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
     setTimeout(() => {
@@ -49,42 +50,27 @@ export default function ContactPage() {
 
   const field = (name: string): React.CSSProperties => ({
     width: "100%",
-    padding: "13px 16px",
+    padding: "12px 16px",
     fontSize: "14px",
     fontFamily: "var(--sans)",
     background: focused === name ? "var(--surface2)" : "var(--surface)",
-    border: `1px solid ${focused === name ? "rgba(201,168,76,0.5)" : "var(--border)"}`,
-    borderRadius: "10px",
+    border: `1px solid ${focused === name ? "rgba(201,168,76,0.45)" : "var(--border)"}`,
+    borderRadius: "var(--radius-md)",
     color: "var(--text)",
     outline: "none",
     transition: "all 0.2s",
-    boxShadow: focused === name ? "0 0 0 3px rgba(201,168,76,0.08)" : "none",
+    boxShadow: focused === name ? "0 0 0 3px rgba(201,168,76,0.07)" : "none",
   });
 
   return (
     <>
-      {/* Hero */}
+      {/* ── HERO ── */}
       <section
         style={{
           padding: "80px 0 64px",
           borderBottom: "1px solid var(--border)",
-          position: "relative",
-          overflow: "hidden",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: "-40%",
-            right: "-10%",
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
         <div className="container">
           <p className="label anim-in" style={{ marginBottom: "24px" }}>
             Get In Touch
@@ -93,12 +79,12 @@ export default function ContactPage() {
             className="anim-up d1"
             style={{
               fontFamily: "var(--serif)",
-              fontSize: "clamp(44px, 5.5vw, 72px)",
+              fontSize: "clamp(40px, 5vw, 68px)",
               fontWeight: 300,
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
               color: "var(--text)",
-              marginBottom: "20px",
+              marginBottom: "16px",
             }}
           >
             Let&apos;s work{" "}
@@ -109,9 +95,9 @@ export default function ContactPage() {
           <p
             className="anim-up d2"
             style={{
-              fontSize: "17px",
+              fontSize: "16px",
               color: "var(--muted2)",
-              maxWidth: "500px",
+              maxWidth: "460px",
               lineHeight: 1.8,
             }}
           >
@@ -121,35 +107,36 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section style={{ padding: "88px 0" }}>
+      {/* ── CONTENT ── */}
+      <section style={{ padding: "72px 0" }}>
         <div
           className="container"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 500px",
-            gap: "88px",
+            gridTemplateColumns: "1fr 460px",
+            gap: "72px",
             alignItems: "start",
           }}
         >
-          {/* Left */}
+          {/* Left: Contact info */}
           <div>
             <h2
               style={{
                 fontFamily: "var(--serif)",
-                fontSize: "28px",
+                fontSize: "24px",
                 fontWeight: 400,
                 color: "var(--text)",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Contact Information
             </h2>
             <p
               style={{
-                fontSize: "15px",
+                fontSize: "14px",
                 color: "var(--muted2)",
                 lineHeight: 1.8,
-                marginBottom: "44px",
+                marginBottom: "36px",
               }}
             >
               I typically respond within 24 hours. For urgent inquiries, email
@@ -160,48 +147,25 @@ export default function ContactPage() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "12px",
-                marginBottom: "48px",
+                gap: "10px",
+                marginBottom: "36px",
               }}
             >
               {info.map((c) => (
                 <div
                   key={c.label}
+                  className="h-border"
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: "16px",
-                    padding: "18px 20px",
+                    padding: "16px 18px",
                     background: "var(--surface)",
                     border: "1px solid var(--border)",
-                    borderRadius: "12px",
-                    transition: "border-color 0.2s",
+                    borderRadius: "var(--radius-md)",
                   }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.borderColor =
-                      "var(--border2)")
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.borderColor =
-                      "var(--border)")
-                  }
                 >
-                  <div
-                    style={{
-                      width: "44px",
-                      height: "44px",
-                      background: "var(--surface2)",
-                      borderRadius: "10px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "20px",
-                      flexShrink: 0,
-                    }}
-                  >
-                    {c.icon}
-                  </div>
-                  <div>
+                  <div style={{ flex: 1 }}>
                     <p
                       style={{
                         fontFamily: "var(--mono)",
@@ -217,19 +181,12 @@ export default function ContactPage() {
                     {c.href ? (
                       <a
                         href={c.href}
+                        className="h-gold"
                         style={{
                           fontSize: "14px",
                           fontWeight: 500,
-                          color: "var(--gold)",
-                          transition: "opacity 0.2s",
+                          color: "var(--text)",
                         }}
-                        onMouseEnter={(e) =>
-                          ((e.currentTarget as HTMLElement).style.opacity =
-                            "0.7")
-                        }
-                        onMouseLeave={(e) =>
-                          ((e.currentTarget as HTMLElement).style.opacity = "1")
-                        }
                       >
                         {c.value}
                       </a>
@@ -252,10 +209,10 @@ export default function ContactPage() {
             {/* Availability */}
             <div
               style={{
-                padding: "24px",
-                background: "rgba(45,212,160,0.06)",
-                border: "1px solid rgba(45,212,160,0.2)",
-                borderRadius: "12px",
+                padding: "20px 22px",
+                background: "rgba(45,212,160,0.05)",
+                border: "1px solid rgba(45,212,160,0.18)",
+                borderRadius: "var(--radius-md)",
               }}
             >
               <div
@@ -263,7 +220,7 @@ export default function ContactPage() {
                   display: "flex",
                   alignItems: "center",
                   gap: "10px",
-                  marginBottom: "8px",
+                  marginBottom: "6px",
                 }}
               >
                 <span
@@ -288,61 +245,49 @@ export default function ContactPage() {
               </div>
               <p
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   color: "var(--muted2)",
                   lineHeight: 1.7,
                 }}
               >
                 Open to full-time roles, contract work, and project
-                collaborations. Response time:{" "}
-                <strong style={{ color: "var(--text)" }}>under 24 hours</strong>
-                .
+                collaborations.{" "}
+                <strong style={{ color: "var(--text)" }}>
+                  Response time: under 24 hours.
+                </strong>
               </p>
             </div>
           </div>
 
-          {/* Form */}
+          {/* Right: Form */}
           <div
             style={{
               background: "var(--surface)",
               border: "1px solid var(--border)",
-              borderRadius: "20px",
-              padding: "40px",
-              position: "relative",
-              overflow: "hidden",
+              borderRadius: "var(--radius-xl)",
+              padding: "36px",
             }}
           >
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "2px",
-                background: "linear-gradient(90deg, var(--gold), transparent)",
-              }}
-            />
-
             {status === "sent" ? (
-              <div style={{ textAlign: "center", padding: "56px 0" }}>
-                <div style={{ fontSize: "56px", marginBottom: "20px" }}>✅</div>
+              <div style={{ textAlign: "center", padding: "48px 0" }}>
+                <div style={{ fontSize: "48px", marginBottom: "20px" }}>✅</div>
                 <h3
                   style={{
                     fontFamily: "var(--serif)",
-                    fontSize: "26px",
+                    fontSize: "24px",
                     fontWeight: 400,
                     color: "var(--text)",
-                    marginBottom: "12px",
+                    marginBottom: "10px",
                   }}
                 >
                   Message Sent!
                 </h3>
                 <p
                   style={{
-                    fontSize: "15px",
+                    fontSize: "14px",
                     color: "var(--muted2)",
                     lineHeight: 1.7,
-                    marginBottom: "28px",
+                    marginBottom: "24px",
                   }}
                 >
                   Thank you for reaching out. I&apos;ll get back to you within
@@ -358,39 +303,32 @@ export default function ContactPage() {
             ) : (
               <form
                 onSubmit={submit}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "20px",
-                }}
+                style={{ display: "flex", flexDirection: "column", gap: "18px" }}
               >
                 <div>
                   <h3
                     style={{
                       fontFamily: "var(--serif)",
-                      fontSize: "24px",
+                      fontSize: "22px",
                       fontWeight: 400,
                       color: "var(--text)",
-                      marginBottom: "6px",
+                      marginBottom: "4px",
                     }}
                   >
                     Send a Message
                   </h3>
                   <p
-                    style={{
-                      fontSize: "13px",
-                      color: "var(--muted)",
-                      marginBottom: "8px",
-                    }}
+                    style={{ fontSize: "12px", color: "var(--muted)" }}
                   >
-                    All fields required.
+                    All fields are required.
                   </p>
                 </div>
+
                 <div
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
-                    gap: "14px",
+                    gap: "12px",
                   }}
                 >
                   <div>
@@ -399,7 +337,7 @@ export default function ContactPage() {
                         display: "block",
                         fontFamily: "var(--mono)",
                         fontSize: "10px",
-                        letterSpacing: "0.15em",
+                        letterSpacing: "0.14em",
                         textTransform: "uppercase",
                         color: "var(--muted)",
                         marginBottom: "6px",
@@ -409,9 +347,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       value={form.name}
-                      onChange={(e) =>
-                        setForm({ ...form, name: e.target.value })
-                      }
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
                       onFocus={() => setFocused("name")}
                       onBlur={() => setFocused(null)}
                       placeholder="Bima Panji"
@@ -425,7 +361,7 @@ export default function ContactPage() {
                         display: "block",
                         fontFamily: "var(--mono)",
                         fontSize: "10px",
-                        letterSpacing: "0.15em",
+                        letterSpacing: "0.14em",
                         textTransform: "uppercase",
                         color: "var(--muted)",
                         marginBottom: "6px",
@@ -436,9 +372,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       value={form.email}
-                      onChange={(e) =>
-                        setForm({ ...form, email: e.target.value })
-                      }
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
                       onFocus={() => setFocused("email")}
                       onBlur={() => setFocused(null)}
                       placeholder="you@email.com"
@@ -447,13 +381,14 @@ export default function ContactPage() {
                     />
                   </div>
                 </div>
+
                 <div>
                   <label
                     style={{
                       display: "block",
                       fontFamily: "var(--mono)",
                       fontSize: "10px",
-                      letterSpacing: "0.15em",
+                      letterSpacing: "0.14em",
                       textTransform: "uppercase",
                       color: "var(--muted)",
                       marginBottom: "6px",
@@ -463,9 +398,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     value={form.subject}
-                    onChange={(e) =>
-                      setForm({ ...form, subject: e.target.value })
-                    }
+                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     onFocus={() => setFocused("subject")}
                     onBlur={() => setFocused(null)}
                     placeholder="Project inquiry / Job opportunity"
@@ -473,13 +406,14 @@ export default function ContactPage() {
                     style={field("subject")}
                   />
                 </div>
+
                 <div>
                   <label
                     style={{
                       display: "block",
                       fontFamily: "var(--mono)",
                       fontSize: "10px",
-                      letterSpacing: "0.15em",
+                      letterSpacing: "0.14em",
                       textTransform: "uppercase",
                       color: "var(--muted)",
                       marginBottom: "6px",
@@ -489,53 +423,28 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     value={form.message}
-                    onChange={(e) =>
-                      setForm({ ...form, message: e.target.value })
-                    }
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
                     onFocus={() => setFocused("message")}
                     onBlur={() => setFocused(null)}
                     placeholder="Tell me about your project, timeline, and budget..."
                     required
-                    rows={6}
-                    style={
-                      {
-                        ...field("message"),
-                        resize: "none",
-                      } as React.CSSProperties
-                    }
+                    rows={5}
+                    style={{ ...field("message"), resize: "none" } as React.CSSProperties}
                   />
                 </div>
+
                 <button
                   type="submit"
                   disabled={status === "sending"}
+                  className="btn btn-gold"
                   style={{
                     width: "100%",
-                    padding: "15px",
-                    background: "var(--gold)",
-                    color: "#000",
-                    border: "none",
-                    borderRadius: "10px",
-                    fontFamily: "var(--sans)",
-                    fontWeight: 700,
-                    fontSize: "15px",
-                    letterSpacing: "0.02em",
-                    cursor: "pointer",
-                    transition: "all 0.25s",
+                    justifyContent: "center",
+                    padding: "14px",
+                    fontSize: "14px",
+                    fontWeight: 600,
                     opacity: status === "sending" ? 0.6 : 1,
-                  }}
-                  onMouseEnter={(e) => {
-                    if (status !== "sending") {
-                      (e.currentTarget as HTMLElement).style.background =
-                        "var(--gold2)";
-                      (e.currentTarget as HTMLElement).style.transform =
-                        "translateY(-1px)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background =
-                      "var(--gold)";
-                    (e.currentTarget as HTMLElement).style.transform =
-                      "translateY(0)";
+                    cursor: status === "sending" ? "not-allowed" : "pointer",
                   }}
                 >
                   {status === "sending" ? "Sending…" : "Send Message →"}
