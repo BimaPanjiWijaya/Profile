@@ -232,9 +232,6 @@ export default function Home() {
               <Link href="/experience" className="btn btn-gold">
                 View Experience →
               </Link>
-              <a href="#" className="btn btn-ghost">
-                Download CV ↓
-              </a>
             </div>
           </div>
 

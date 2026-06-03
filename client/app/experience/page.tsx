@@ -323,46 +323,6 @@ export default function ExperiencePage() {
           </div>
         </div>
       </section>
-
-      {/* ── CTA ── */}
-      <section style={{ padding: "72px 0" }}>
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              gap: "24px",
-            }}
-          >
-            <div>
-              <h3
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "26px",
-                  fontWeight: 300,
-                  color: "var(--text)",
-                  marginBottom: "6px",
-                }}
-              >
-                Want the full picture?
-              </h3>
-              <p style={{ fontSize: "14px", color: "var(--muted2)" }}>
-                Download my CV for a complete overview of experience and skills.
-              </p>
-            </div>
-            <div style={{ display: "flex", gap: "12px", flexShrink: 0 }}>
-              <Link href="/contact" className="btn btn-gold">
-                Get in Touch →
-              </Link>
-              <a href="#" className="btn btn-ghost">
-                Download CV ↓
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
