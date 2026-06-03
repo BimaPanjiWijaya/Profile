@@ -101,13 +101,7 @@ export default function SkillsPage() {
         style={{ padding: "72px 0", borderBottom: "1px solid var(--border)" }}
       >
         <div className="container">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "20px",
-            }}
-          >
+          <div className="grid-auto-3">
             {categories.map((cat) => (
               <div
                 key={cat.label}

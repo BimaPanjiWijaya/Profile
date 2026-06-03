@@ -305,6 +305,77 @@ img, svg {
 .h-text { transition: color var(--transition); }
 .h-text:hover { color: var(--text) !important; }
 
+/* ─── LAYOUT UTILITIES ─── */
+.grid-auto-2 {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 80px;
+  align-items: start;
+}
+
+.grid-auto-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-contact {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 72px;
+  align-items: start;
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: 1fr 140px 140px;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats-row {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 32px;
+}
+
+.stat-item {
+  padding-right: 44px;
+  margin-right: 44px;
+  border-right: 1px solid var(--border);
+}
+
+.stat-item:last-child {
+  padding-right: 0;
+  margin-right: 0;
+  border-right: none;
+}
+
 /* ─── RESPONSIVE ─── */
 .mobile-burger {
   display: none !important;
@@ -318,10 +389,53 @@ img, svg {
   .container {
     padding: 0 20px;
   }
+  .nav-inner {
+    padding: 0 20px;
+  }
   .mobile-burger {
     display: flex !important;
   }
   .desktop-nav {
     display: none !important;
+  }
+  .grid-auto-2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .grid-auto-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .grid-contact {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .card-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-auto-3 {
+    grid-template-columns: 1fr;
+  }
+  .grid-footer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+  .stats-row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .stat-item {
+    flex: 1 1 80px;
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
   }
 }

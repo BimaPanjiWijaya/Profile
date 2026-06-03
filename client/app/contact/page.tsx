@@ -109,15 +109,7 @@ export default function ContactPage() {
 
       {/* ── CONTENT ── */}
       <section style={{ padding: "72px 0" }}>
-        <div
-          className="container"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 460px",
-            gap: "72px",
-            alignItems: "start",
-          }}
-        >
+        <div className="container grid-contact">
           {/* Left: Contact info */}
           <div>
             <h2
@@ -324,13 +316,7 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "12px",
-                  }}
-                >
+                <div className="form-row-2">
                   <div>
                     <label
                       style={{

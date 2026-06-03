@@ -114,28 +114,13 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div
-            className="anim-up d4"
-            style={{
-              display: "flex",
-              gap: "0",
-              borderTop: "1px solid var(--border)",
-              paddingTop: "32px",
-            }}
-          >
+          <div className="anim-up d4 stats-row">
             {[
               ["2+", "Years Experience"],
               ["5+", "Projects Built"],
               ["2+", "Companies"],
-            ].map(([n, l], i) => (
-              <div
-                key={l}
-                style={{
-                  paddingRight: "44px",
-                  marginRight: "44px",
-                  borderRight: i < 2 ? "1px solid var(--border)" : "none",
-                }}
-              >
+            ].map(([n, l]) => (
+              <div key={l} className="stat-item">
                 <div
                   style={{
                     fontFamily: "var(--serif)",
@@ -173,15 +158,7 @@ export default function Home() {
           borderBottom: "1px solid var(--border)",
         }}
       >
-        <div
-          className="container"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 280px",
-            gap: "80px",
-            alignItems: "start",
-          }}
-        >
+        <div className="container grid-auto-2">
           {/* Text */}
           <div>
             <p className="label" style={{ marginBottom: "20px" }}>

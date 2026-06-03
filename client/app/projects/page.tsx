@@ -110,14 +110,7 @@ export default function ProjectsPage() {
                   }}
                 />
 
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr auto",
-                    gap: "24px",
-                    alignItems: "start",
-                  }}
-                >
+                <div className="card-row">
                   <div>
                     {/* Header row */}
                     <div

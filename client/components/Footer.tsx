@@ -25,15 +25,7 @@ export default function Footer() {
       }}
     >
       <div className="container">
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 140px 140px",
-            gap: "60px",
-            alignItems: "start",
-            marginBottom: "40px",
-          }}
-        >
+        <div className="grid-footer">
           <div>
             <Link href="/" style={{ display: "block", marginBottom: "12px" }}>
               <span

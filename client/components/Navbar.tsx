@@ -47,17 +47,7 @@ export default function Navbar() {
           transition: "background 0.3s ease, border-color 0.3s ease",
         }}
       >
-        <div
-          style={{
-            maxWidth: "var(--max-w)",
-            margin: "0 auto",
-            padding: "0 48px",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className="nav-inner">
           {/* Logo */}
           <Link
             href="/"
