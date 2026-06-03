@@ -131,13 +131,11 @@ export default function ExperiencePage() {
                     </div>
 
                     {/* Company & location */}
-                    <p style={{ fontSize: "14px", marginBottom: "16px" }}>
+                    <p style={{ fontSize: "14px", marginBottom: "16px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "2px 8px" }}>
                       <span style={{ fontWeight: 600, color: e.color }}>
                         {e.co}
                       </span>
-                      <span
-                        style={{ color: "var(--muted)", marginLeft: "10px" }}
-                      >
+                      <span style={{ color: "var(--muted)" }}>
                         {e.loc}
                       </span>
                     </p>
@@ -240,7 +238,7 @@ export default function ExperiencePage() {
             {education.map((ed) => (
               <div
                 key={ed.school}
-                className="card-row"
+                className="card-row card-outer"
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--border)",

@@ -61,6 +61,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -71,6 +72,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 a {
@@ -414,16 +416,20 @@ img, svg {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+  /* Footer: brand full-width, Pages & Connect side by side */
+  .grid-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .grid-footer > *:first-child {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 640px) {
   .grid-auto-3 {
     grid-template-columns: 1fr;
-  }
-  .grid-footer {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 24px;
   }
   .form-row-2 {
     grid-template-columns: 1fr;
@@ -437,5 +443,22 @@ img, svg {
     padding-right: 0;
     margin-right: 0;
     border-right: none;
+  }
+  /* Reduce heavy card padding on small screens */
+  .h-border, .h-lift, .card-outer {
+    padding: 20px 16px !important;
+  }
+  /* Hero text: reduce font size and letter-spacing so it fits */
+  .hero-title {
+    font-size: clamp(36px, 10vw, 48px) !important;
+  }
+  .hero-role {
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    word-break: break-word;
+  }
+  /* Prevent any text from creating horizontal scroll */
+  .section-title {
+    font-size: clamp(28px, 8vw, 44px) !important;
   }
 }

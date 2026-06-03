@@ -51,7 +51,7 @@ export default function Home() {
 
           {/* Name */}
           <h1
-            className="anim-up d1"
+            className="anim-up d1 hero-title"
             style={{
               fontFamily: "var(--serif)",
               fontSize: "clamp(48px, 6vw, 84px)",
@@ -67,7 +67,7 @@ export default function Home() {
 
           {/* Role */}
           <p
-            className="anim-up d1"
+            className="anim-up d1 hero-role"
             style={{
               fontFamily: "var(--mono)",
               fontSize: "13px",
