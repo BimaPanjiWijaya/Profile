@@ -16,7 +16,7 @@ const exps = [
       "Maintained and monitored the office Wi-Fi network",
       "Designed and built a customer satisfaction survey website",
     ],
-    tech: ["HTML/CSS", "JavaScript", "PHP", "MySQL"],
+    tech: ["HTML/CSS", "WordPress", "PostgreSQL"],
   },
   {
     role: "Programmer",
@@ -32,7 +32,7 @@ const exps = [
       "Built a Public Service Mall and Marketplace website",
       "Maintained the network, hardware, and software infrastructure",
     ],
-    tech: ["JavaScript", "Node.js", "Express", "PostgreSQL", "React"],
+    tech: ["HTML/CSS", "WordPress", "PostgreSQL"],
   },
 ];
 
@@ -42,14 +42,14 @@ const education = [
     school: "Hacktiv8",
     period: "Feb 2026 – May 2026",
     loc: "Jakarta, Indonesia",
-    note: "Intensive bootcamp covering modern full-stack JavaScript development. Completed 3 capstone projects using React, Node.js, PostgreSQL, MongoDB, and GraphQL.",
+    note: "Hacktiv8 Full Stack JavaScript adalah bootcamp intensif yang melatih kemampuan membangun aplikasi web end-to-end, mencakup React.js, Next.js, dan TypeScript untuk frontend, serta Node.js, Express.js, PostgreSQL, dan MongoDB untuk backend, lengkap dengan praktik proyek kolaboratif dan deployment.",
     color: "var(--gold)",
   },
   {
-    degree: "Bachelor of Accounting",
+    degree: "Bachelor of Engineering",
     school: "Universitas Ahmad Dahlan",
     period: "2017 – 2022",
-    loc: "Jakarta, Indonesia",
+    loc: "Yogyakarta, Indonesia",
     note: "GPA 3.39 / 4.00",
     color: "var(--muted2)",
   },
@@ -131,13 +131,20 @@ export default function ExperiencePage() {
                     </div>
 
                     {/* Company & location */}
-                    <p style={{ fontSize: "14px", marginBottom: "16px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "2px 8px" }}>
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        marginBottom: "16px",
+                        display: "flex",
+                        flexWrap: "wrap",
+                        alignItems: "center",
+                        gap: "2px 8px",
+                      }}
+                    >
                       <span style={{ fontWeight: 600, color: e.color }}>
                         {e.co}
                       </span>
-                      <span style={{ color: "var(--muted)" }}>
-                        {e.loc}
-                      </span>
+                      <span style={{ color: "var(--muted)" }}>{e.loc}</span>
                     </p>
 
                     {/* Description */}
