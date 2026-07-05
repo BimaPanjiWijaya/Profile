@@ -2,6 +2,11 @@ import PageHero from "@/components/PageHero";
 
 const categories = [
   {
+    label: "Language",
+    color: "var(--blue)",
+    skills: ["JavaScript", "TypeScript", "Python", "SQL"],
+  },
+  {
     label: "Frontend",
     color: "var(--blue)",
     skills: [
@@ -247,7 +252,10 @@ export default function SkillsPage() {
                   >
                     {c.issuer}
                   </p>
-                  <span className="badge badge-gray" style={{ fontSize: "10px" }}>
+                  <span
+                    className="badge badge-gray"
+                    style={{ fontSize: "10px" }}
+                  >
                     {c.type === "Role Certification" ? "Role" : "Skill"}
                   </span>
                 </div>
