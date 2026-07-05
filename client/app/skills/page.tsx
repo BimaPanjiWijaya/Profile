@@ -12,7 +12,6 @@ const categories = [
     skills: [
       "React.js / Next.js",
       "React Native",
-      "TypeScript / JavaScript",
       "Redux / Context API",
       "Apollo Client",
       "HTML / CSS / Tailwind CSS",
