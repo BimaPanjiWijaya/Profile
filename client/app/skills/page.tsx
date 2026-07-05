@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 const categories = [
   {
     label: "Language",
-    color: "var(--blue)",
+    color: "var(--purple)",
     skills: ["JavaScript", "TypeScript", "Python", "SQL"],
   },
   {
