@@ -4,18 +4,19 @@ const categories = [
   {
     label: "Language",
     color: "var(--gold)",
-    skills: ["JavaScript", "TypeScript", "Python", "SQL"],
+    skills: ["JavaScript", "TypeScript", "SQL", "Python"],
   },
   {
     label: "Frontend",
     color: "var(--blue)",
     skills: [
       "React.js / Next.js",
-      "React Native",
+      "React Native / React Navigation",
       "Redux / Context API",
-      "Apollo Client",
       "HTML / CSS / Tailwind CSS",
-      "DaisyUI / Bootstrap",
+      "Shadcn UI / DaisyUI / Bootstrap",
+      "Apollo Client / Axios",
+      "Recharts",
     ],
   },
   {
@@ -23,13 +24,12 @@ const categories = [
     color: "var(--green)",
     skills: [
       "Node.js / Express.js",
-      "PostgreSQL / MongoDB",
-      "Sequelize / Redis",
-      "GraphQL / Apollo Server",
-      "REST API / Axios",
-      "bcryptjs / JWT",
-      "Gemini AI / Zod",
-      "Prisma / Nodemailer",
+      "PostgreSQL / MongoDB / Redis",
+      "Sequelize / Prisma",
+      "REST API / GraphQL / Apollo Server",
+      "JWT / NextAuth / bcryptjs",
+      "Zod / Gemini AI",
+      "Nodemailer",
     ],
   },
 ];
