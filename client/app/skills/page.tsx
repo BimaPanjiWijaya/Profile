@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 const categories = [
   {
     label: "Language",
-    color: "var(--purple)",
+    color: "var(--gold)",
     skills: ["JavaScript", "TypeScript", "Python", "SQL"],
   },
   {
@@ -23,21 +23,12 @@ const categories = [
     color: "var(--green)",
     skills: [
       "Node.js / Express.js",
-      "PostgreSQL / Sequelize",
-      "MongoDB / Redis",
+      "PostgreSQL / MongoDB",
+      "Sequelize / Redis",
       "GraphQL / Apollo Server",
-      "REST API",
-    ],
-  },
-  {
-    label: "Tools & Practices",
-    color: "var(--gold)",
-    skills: [
-      "Git / GitHub",
-      "AWS / Firebase / Supabase",
-      "Vercel",
-      "Test-Driven Development (TDD)",
-      "AI-assisted Dev (Copilot)",
+      "REST API / JWT",
+      "Gemini AI / Zod",
+      "Prisma / Nodemailer",
     ],
   },
 ];
