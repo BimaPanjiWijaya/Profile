@@ -26,7 +26,8 @@ const categories = [
       "PostgreSQL / MongoDB",
       "Sequelize / Redis",
       "GraphQL / Apollo Server",
-      "REST API / JWT",
+      "REST API / Axios",
+      "bcryptjs / JWT",
       "Gemini AI / Zod",
       "Prisma / Nodemailer",
     ],
@@ -36,12 +37,14 @@ const categories = [
 const tools = [
   "VS Code",
   "Postman",
-  "GitHub Copilot",
+  "Git",
+  "GitHub",
   "Vercel",
   "Supabase",
   "Firebase",
-  "AWS",
+  "AWS EC2",
   "Expo",
+  "Vite",
 ];
 
 const certifications = [
