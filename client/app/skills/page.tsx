@@ -15,7 +15,7 @@ const categories = [
       "Redux / Context API",
       "Apollo Client",
       "HTML / CSS / Tailwind CSS",
-      "Daisy UI / Bootstrap",
+      "DaisyUI / Bootstrap",
     ],
   },
   {
