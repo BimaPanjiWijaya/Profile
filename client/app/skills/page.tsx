@@ -36,13 +36,18 @@ const categories = [
 
 const tools = [
   "VS Code",
-  "Postman",
   "Git",
   "GitHub",
+  "Postman",
+  "Jest",
   "Vercel",
   "Supabase",
   "Firebase",
   "AWS EC2",
+  "Cloudinary",
+  "Google OAuth",
+  "Socket.IO",
+  "Telegram Bot API",
   "Expo",
   "Vite",
 ];
