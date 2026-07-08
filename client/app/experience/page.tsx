@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Experience",
+  description:
+    "Professional experience in government IT infrastructure and web development, along with full-stack JavaScript training from Hacktiv8 and a Bachelor's degree in Engineering.",
+};
 const exps = [
   {
     role: "Programmer",
