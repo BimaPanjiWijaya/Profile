@@ -1,4 +1,11 @@
 import PageHero from "@/components/PageHero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Skills",
+  description:
+    "Technical skills across React, Next.js, Node.js, PostgreSQL, and MongoDB covering frontend, backend, and development tooling.",
+};
 
 const categories = [
   {
