@@ -295,7 +295,11 @@ export default function ContactPage() {
             ) : (
               <form
                 onSubmit={submit}
-                style={{ display: "flex", flexDirection: "column", gap: "18px" }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "18px",
+                }}
               >
                 <div>
                   <h3
@@ -309,9 +313,7 @@ export default function ContactPage() {
                   >
                     Send a Message
                   </h3>
-                  <p
-                    style={{ fontSize: "12px", color: "var(--muted)" }}
-                  >
+                  <p style={{ fontSize: "12px", color: "var(--muted)" }}>
                     All fields are required.
                   </p>
                 </div>
@@ -333,7 +335,9 @@ export default function ContactPage() {
                     </label>
                     <input
                       value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, name: e.target.value })
+                      }
                       onFocus={() => setFocused("name")}
                       onBlur={() => setFocused(null)}
                       placeholder="Bima Panji"
@@ -358,7 +362,9 @@ export default function ContactPage() {
                     <input
                       type="email"
                       value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
                       onFocus={() => setFocused("email")}
                       onBlur={() => setFocused(null)}
                       placeholder="you@email.com"
@@ -384,7 +390,9 @@ export default function ContactPage() {
                   </label>
                   <input
                     value={form.subject}
-                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, subject: e.target.value })
+                    }
                     onFocus={() => setFocused("subject")}
                     onBlur={() => setFocused(null)}
                     placeholder="Project inquiry / Job opportunity"
@@ -409,13 +417,20 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, message: e.target.value })
+                    }
                     onFocus={() => setFocused("message")}
                     onBlur={() => setFocused(null)}
                     placeholder="Tell me about your project, timeline, and budget..."
                     required
                     rows={5}
-                    style={{ ...field("message"), resize: "none" } as React.CSSProperties}
+                    style={
+                      {
+                        ...field("message"),
+                        resize: "none",
+                      } as React.CSSProperties
+                    }
                   />
                 </div>
 
