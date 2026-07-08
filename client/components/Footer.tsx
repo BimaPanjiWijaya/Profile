@@ -11,7 +11,10 @@ const pageLinks = [
 
 const socials = [
   { href: "https://github.com/BimaPanjiWijaya", label: "GitHub ↗" },
-  { href: "#", label: "LinkedIn ↗" },
+  {
+    href: "https://www.linkedin.com/in/bima-panji-wijaya-8a44a8218/",
+    label: "LinkedIn ↗",
+  },
   { href: "mailto:bimapanjiwijaya@gmail.com", label: "Email ↗" },
 ];
 
