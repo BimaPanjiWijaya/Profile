@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "A selection of full-stack applications I've built — including an AI-powered analytics platform, an e-commerce site, a cross-platform social app, and an AI-driven finance tracker.",
+};
 const projects = [
   {
     num: "01",
