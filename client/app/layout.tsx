@@ -27,14 +27,6 @@ export const metadata: Metadata = {
       "Full Stack Developer based in Jakarta, Indonesia. Specializing in React, Next.js, Node.js, PostgreSQL, and modern web applications.",
     url: "https://bima-panji-wijaya.vercel.app/",
     siteName: "Bima Panji Wijaya Portfolio",
-    images: [
-      {
-        url: "public/favicon.svg",
-        width: 1200,
-        height: 630,
-        alt: "Bima Panji Wijaya — Full Stack Developer",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
