@@ -57,6 +57,7 @@ const tools = [
   "Telegram Bot API",
   "Expo",
   "Vite",
+  "WordPress",
 ];
 
 const certifications = [
