@@ -550,27 +550,33 @@ svg {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  gap: 64px;
   align-items: center;
+}
+
+.hero-grid > div:first-child {
+  max-width: 640px;
 }
 
 .hero-photo-wrap {
   position: relative;
-  width: min(100%, 430px);
+  width: min(100%, 420px);
   justify-self: end;
 }
 
 .hero-photo-wrap::before {
   content: "";
   position: absolute;
-  inset: 8% -8% -8% 8%;
+  inset: -8%;
+  border-radius: 50%;
   background: radial-gradient(
-    circle at 20% 20%,
-    rgba(201, 168, 76, 0.26),
-    transparent 60%
+    circle at 35% 30%,
+    rgba(201, 168, 76, 0.22),
+    rgba(201, 168, 76, 0.02) 55%,
+    transparent 72%
   );
-  filter: blur(20px);
+  filter: blur(24px);
   z-index: 0;
   pointer-events: none;
 }
@@ -578,41 +584,46 @@ svg {
 .hero-photo-ring {
   position: relative;
   z-index: 1;
-  padding: 10px;
-  border-radius: 28px;
+  padding: 12px;
+  border-radius: 50%;
   background: linear-gradient(
     145deg,
-    rgba(212, 181, 102, 0.4),
-    rgba(255, 255, 255, 0.06)
+    rgba(212, 181, 102, 0.5),
+    rgba(255, 255, 255, 0.08)
   );
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.42),
+    0 2px 0 rgba(255, 255, 255, 0.08) inset;
 }
 
 .hero-photo {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 20px;
-  border: 1px solid var(--border2);
+  object-position: center 22%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.14);
 }
 
 .hero-photo-badge {
   position: absolute;
-  left: -12px;
-  bottom: 18px;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
   z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
+  padding: 9px 14px;
   border-radius: 999px;
-  background: rgba(11, 12, 15, 0.88);
+  background: rgba(11, 12, 15, 0.82);
   border: 1px solid var(--border2);
   color: var(--text);
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.04em;
+  white-space: nowrap;
   backdrop-filter: blur(8px);
 }
 
@@ -630,13 +641,17 @@ svg {
     gap: 36px;
   }
 
+  .hero-grid > div:first-child {
+    max-width: 100%;
+  }
+
   .hero-photo-wrap {
-    justify-self: start;
-    width: min(100%, 420px);
+    justify-self: center;
+    width: min(100%, 360px);
   }
 
   .hero-photo-badge {
-    left: 12px;
+    left: 50%;
     bottom: 12px;
   }
 }
@@ -644,6 +659,6 @@ svg {
 @media (max-width: 640px) {
   .hero-photo-badge {
     font-size: 10px;
-    padding: 8px 12px;
+    padding: 8px 11px;
   }
 }
