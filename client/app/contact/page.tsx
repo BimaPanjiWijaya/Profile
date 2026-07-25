@@ -8,14 +8,14 @@ const info = [
     href: "mailto:bimapanjiwijaya@gmail.com",
   },
   {
-    label: "Phone",
-    value: "085157798617",
-    href: "tel:085157798617",
+    label: "WhatsApp",
+    value: "0851-5779-8617",
+    href: "https://wa.me/6285157798617?text=Halo%20Bima%2C%20saya%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut",
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/bimapanji",
-    href: "#",
+    value: "linkedin.com/in/bima-panji-wijaya",
+    href: "https://www.linkedin.com/in/bima-panji-wijaya-8a44a8218/",
   },
   {
     label: "GitHub",
