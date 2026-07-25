@@ -94,7 +94,8 @@ export default function Home() {
               }}
             >
               I build responsive and user-friendly web applications with
-              JavaScript and TypeScript — from front-end to back-end, end-to-end.
+              JavaScript and TypeScript — from front-end to back-end,
+              end-to-end.
             </p>
 
             {/* CTAs */}
@@ -161,11 +162,6 @@ export default function Home() {
                 priority
                 className="hero-photo"
               />
-            </div>
-
-            <div className="hero-photo-badge">
-              <span className="dot" />
-              Full Stack Developer
             </div>
           </div>
         </div>
