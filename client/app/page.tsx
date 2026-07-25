@@ -56,12 +56,13 @@ export default function Home() {
               className="anim-up d1 hero-title"
               style={{
                 fontFamily: "var(--serif)",
-                fontSize: "clamp(48px, 6vw, 84px)",
+                fontSize: "clamp(40px, 5vw, 62px)",
                 fontWeight: 300,
                 lineHeight: 1.05,
                 letterSpacing: "-0.02em",
                 color: "var(--text)",
                 marginBottom: "16px",
+                whiteSpace: "nowrap",
               }}
             >
               Bima Panji Wijaya

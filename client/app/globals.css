@@ -550,9 +550,9 @@ svg {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero-grid > div:first-child {
@@ -563,6 +563,7 @@ svg {
   position: relative;
   width: min(100%, 420px);
   justify-self: end;
+  margin-top: 20px;
 }
 
 .hero-photo-wrap::before {
