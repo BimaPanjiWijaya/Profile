@@ -27,7 +27,7 @@ const exps = [
     role: "Programmer",
     co: "DPMPTSP South Bengkulu",
     period: "Aug 2023 — Aug 2025",
-    type: "Full-time",
+    type: "Contract",
     loc: "Bengkulu, Indonesia",
     color: "var(--green)",
     badge: "badge-green",
