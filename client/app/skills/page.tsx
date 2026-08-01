@@ -58,6 +58,7 @@ const tools = [
   "Expo",
   "Vite",
   "WordPress",
+  "n8n Workflow Automation",
 ];
 
 const certifications = [
